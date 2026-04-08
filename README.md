@@ -6,6 +6,8 @@ Programme des PAMI du Bidulab de 2026. Utiliser [MakeCode pour le modifier](#éd
 
 Lors du démarage du PAMI, appuiller sur `B` pour séléctionner le numéro du PAMI (le PAMI ninja est le n°4). Une fois le bon numéro séléctionner, metter la ficelle de démarade et appuiller sur `A`. Le PAMI démarera automatiquement au bout de 85s.
 
+Vous pouvez aussi lancer le PAMI depuis la radio (avec une autre micro:bit). Pour cela, séléctionner le numéro du PAMI, puis depuis la micro:bit radio, appuiller sur `A`. Le PAMI lancera le décompte. Le code pour la micro:bit radio est disponible sur Github : [https://github.com/smartin187/telecommande_pami](https://github.com/smartin187/telecommande_pami). **Attention :** En cas de perturbation du signale radio, mieux vaut utiliser la ficelle de lancement...
+
 ## Mettre les modification sur les PAMI
 
 Une fois que vous avez [éditer ce projet](#éditer-ce-projet), vous pouvez mettre le programme sur les PAMI directement depuis MakeCode. Si vous utiliser Chrome / Chromium, le programme pourra être mis automatiquement, sinon, copier manuellement le programme.
