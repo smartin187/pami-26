@@ -4,13 +4,14 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 input.onButtonPressed(Button.A, function () {
+    while (!(input.logoIsPressed()) || input.magneticForce(Dimension.Strength) >= 300) {
+        basic.showIcon(IconNames.House)
+    }
+    radio.sendNumber(1)
     lancerDecompte()
 })
 // Lance le décompte des 85s. Si le fil de lancement est mis, le décompte attendra.
 function lancerDecompte () {
-    while (input.magneticForce(Dimension.Strength) >= 300) {
-        basic.showIcon(IconNames.House)
-    }
     basic.showString("OK")
     basic.showLeds(`
         . . . . .
