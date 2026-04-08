@@ -1,5 +1,5 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == 1) {
+    if (receivedNumber == SIGNAL_RADIO) {
         lancerDecompte()
     }
 })
@@ -7,7 +7,7 @@ input.onButtonPressed(Button.A, function () {
     while (input.magneticForce(Dimension.Strength) >= 300) {
         basic.showIcon(IconNames.House)
     }
-    radio.sendNumber(1)
+    radio.sendNumber(SIGNAL_RADIO)
     lancerDecompte()
 })
 // Lance le décompte des 85s. Si le fil de lancement est mis, le décompte attendra.
@@ -59,9 +59,16 @@ input.onButtonPressed(Button.B, function () {
     }
     basic.showNumber(pami)
 })
+let SIGNAL_RADIO = 0
 let TEMPS = 0
 let pami = 0
 wuKong.setServoAngle(wuKong.ServoTypeList._180, wuKong.ServoList.S1, 105)
 pami += 1
 TEMPS = 85
+SIGNAL_RADIO = 38330
 basic.showNumber(pami)
+// Mettre une puissance faible pour réduire le rayon de la radio (donc limiter les interférence)
+radio.setTransmitPower(1)
+radio.setFrequencyBand(0)
+// Changer le groupe pour limiter les interférence. Groupe par défaut sur micro:bit : 0 ou 1
+radio.setGroup(6)
