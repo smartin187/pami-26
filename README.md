@@ -4,9 +4,15 @@ Programme des PAMI du Bidulab de 2026. Utiliser [MakeCode pour le modifier](#éd
 
 ## Utilisation sur les PAMI
 
-Lors du démarage du PAMI, appuiller sur `B` pour séléctionner le numéro du PAMI (le PAMI ninja est le n°4). Une fois le bon numéro séléctionner, metter la ficelle de démarade et appuiller sur `A`. Le PAMI démarera automatiquement au bout de 85s.
+Lors du démarage du PAMI, appuiller sur `B` pour séléctionner le numéro du PAMI (le PAMI ninja est le n°4).
 
-Vous pouvez aussi lancer le PAMI depuis la radio (avec une autre micro:bit). Pour cela, séléctionner le numéro du PAMI, puis depuis la micro:bit radio, appuiller sur `A`. Le PAMI lancera le décompte. Le code pour la micro:bit radio est disponible sur Github : [https://github.com/smartin187/telecommande_pami](https://github.com/smartin187/telecommande_pami). **Attention :** En cas de perturbation du signale radio, mieux vaut utiliser la ficelle de lancement...
+Une fois le bon numéro séléctionner, metter la ficelle de démarage **pour un seul PAMI** et appuiller sur `A` (pour ce PAMI seulement). Ce PAMI déclenchera le décompte pour tout les PAMIs une fois que le cordon de démarage est tirer (utilisation de la radio).
+
+### Problème de radio
+
+Il est possible d'avoir des problème lier avec la radio (interférences). Pour cela, il y a plusieur solution :
+- Dans le code, changer la puissance et le groupe de radio.
+- Utiliser un cordon de démarage par PAMIs
 
 ## Mettre les modification sur les PAMI
 
