@@ -4,7 +4,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 input.onButtonPressed(Button.A, function () {
-    while (!(input.logoIsPressed()) || input.magneticForce(Dimension.Strength) >= 300) {
+    while (input.magneticForce(Dimension.Strength) >= 300) {
         basic.showIcon(IconNames.House)
     }
     radio.sendNumber(1)
