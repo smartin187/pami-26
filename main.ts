@@ -7,7 +7,10 @@ input.onButtonPressed(Button.A, function () {
     while (input.magneticForce(Dimension.Strength) >= 300) {
         basic.showIcon(IconNames.House)
     }
-    radio.sendNumber(SIGNAL_RADIO)
+    for (let index = 0; index < 4; index++) {
+        radio.sendNumber(SIGNAL_RADIO)
+        basic.pause(100)
+    }
     lancerDecompte()
 })
 // Lance le décompte des 85s. Si le fil de lancement est mis, le décompte attendra.
@@ -67,8 +70,7 @@ pami += 1
 TEMPS = 85
 SIGNAL_RADIO = 38330
 basic.showNumber(pami)
-// Mettre une puissance faible pour réduire le rayon de la radio (donc limiter les interférence)
-radio.setTransmitPower(1)
+radio.setTransmitPower(7)
 radio.setFrequencyBand(0)
 // Changer le groupe pour limiter les interférence. Groupe par défaut sur micro:bit : 0 ou 1
 radio.setGroup(6)
