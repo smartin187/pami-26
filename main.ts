@@ -15,7 +15,7 @@ input.onButtonPressed(Button.A, function () {
 })
 // Lance le décompte des 85s. Si le fil de lancement est mis, le décompte attendra.
 function lancerDecompte () {
-    timer = 0
+    timer = 10
     for (let index = 0; index < 9; index++) {
         timer += -1
         basic.showNumber(timer)
