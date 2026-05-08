@@ -15,15 +15,12 @@ input.onButtonPressed(Button.A, function () {
 })
 // Lance le décompte des 85s. Si le fil de lancement est mis, le décompte attendra.
 function lancerDecompte () {
-    basic.showString("OK")
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
-    basic.pause(TEMPS * 1000)
+    timer = 0
+    for (let index = 0; index < 9; index++) {
+        timer += -1
+        basic.showNumber(timer)
+        basic.pause(TEMPS * 100)
+    }
     basic.showIcon(IconNames.Happy)
     if (pami == 1) {
         basic.pause(2000)
@@ -62,6 +59,7 @@ input.onButtonPressed(Button.B, function () {
     }
     basic.showNumber(pami)
 })
+let timer = 0
 let SIGNAL_RADIO = 0
 let TEMPS = 0
 let pami = 0
