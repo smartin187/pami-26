@@ -1,15 +1,6 @@
-radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == SIGNAL_RADIO) {
-        lancerDecompte()
-    }
-})
 input.onButtonPressed(Button.A, function () {
     while (input.magneticForce(Dimension.Strength) >= 300) {
         basic.showIcon(IconNames.House)
-    }
-    for (let index = 0; index < 4; index++) {
-        radio.sendNumber(SIGNAL_RADIO)
-        basic.pause(100)
     }
     lancerDecompte()
 })
@@ -62,15 +53,10 @@ input.onButtonPressed(Button.B, function () {
     }
     basic.showNumber(pami)
 })
-let SIGNAL_RADIO = 0
 let TEMPS = 0
 let pami = 0
 wuKong.setServoAngle(wuKong.ServoTypeList._180, wuKong.ServoList.S1, 105)
 pami += 1
 TEMPS = 85
-SIGNAL_RADIO = 38330
+let SIGNAL_RADIO = 38330
 basic.showNumber(pami)
-radio.setTransmitPower(7)
-radio.setFrequencyBand(0)
-// Changer le groupe pour limiter les interférence. Groupe par défaut sur micro:bit : 0 ou 1
-radio.setGroup(6)
