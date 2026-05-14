@@ -65,6 +65,8 @@ input.onButtonPressed(Button.B, function () {
 let SIGNAL_RADIO = 0
 let TEMPS = 0
 let pami = 0
+let VERSION = "1.5"
+basic.showString("v" + VERSION)
 wuKong.setServoAngle(wuKong.ServoTypeList._180, wuKong.ServoList.S1, 105)
 pami += 1
 TEMPS = 85

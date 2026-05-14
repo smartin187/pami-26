@@ -6,7 +6,9 @@ radio.on_received_number(on_received_number)
 def on_button_pressed_a():
     while input.magnetic_force(Dimension.STRENGTH) >= 300:
         basic.show_icon(IconNames.HOUSE)
-    radio.send_number(SIGNAL_RADIO)
+    for index in range(4):
+        radio.send_number(SIGNAL_RADIO)
+        basic.pause(100)
     lancerDecompte()
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
@@ -66,4 +68,5 @@ SIGNAL_RADIO = 38330
 basic.show_number(pami)
 radio.set_transmit_power(7)
 radio.set_frequency_band(0)
-radio.set_group(1)
+# Changer le groupe pour limiter les interférence. Groupe par défaut sur micro:bit : 0 ou 1
+radio.set_group(6)
